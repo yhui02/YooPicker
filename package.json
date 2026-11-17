@@ -1,0 +1,38 @@
+{
+  "name": "@qixiao/dev-picker",
+  "version": "0.1.0",
+  "description": "开发模式的全站元素圈选浮框：圈选页面元素、上下调整选区层级、跨页面累计并复制可直接喂给 AI 的定位信息。",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build-styles.mjs && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  }
+}
