@@ -14,9 +14,14 @@
 # 同级目录（本仓库放在 orchard-app-framework 旁边时）
 pnpm add @orchard/YooPicker@file:../YooPicker
 
-# 或走 git
-pnpm add git+ssh://git@host/your-group/YooPicker.git
+# 或走 git（构建产物 dist/ 已随仓库提交，安装时不需要执行构建脚本）
+pnpm add git+ssh://git@github.com/yhui02/YooPicker.git
+pnpm add git+https://github.com/yhui02/YooPicker.git
 ```
+
+需要锁定版本时在末尾加 `#v0.1.0` 或 `#<commit>`。
+
+> 改完 `src/` 记得 `pnpm build` 并一并提交 `dist/`，否则 git 引用方拿到的还是旧产物。
 
 ## 用法（Next.js App Router）
 
