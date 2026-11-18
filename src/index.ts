@@ -11,4 +11,4 @@ export {
   shiftDepth,
   type DevPick,
   type DevPickerProps,
-} from './DevElementPicker';
+} from './DevElementPicker.js';

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { DEV_PICKER_CSS } from './styles.generated';
+import { DEV_PICKER_CSS } from './styles.generated.js';
 
 /** 只用于判断是否为开发环境；模块内声明，避免强制宿主安装 @types/node */
 declare const process: { env: Record<string, string | undefined> };

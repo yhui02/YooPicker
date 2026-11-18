@@ -2,7 +2,7 @@
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { DEV_PICKER_CSS } from './styles.generated';
+import { DEV_PICKER_CSS } from './styles.generated.js';
 const MAX_TEXT = 60;
 /** 停靠边距：左右与底部统一 16px（最左/最右 与 最下 的最小距离一致） */
 const EDGE_X = 16;
