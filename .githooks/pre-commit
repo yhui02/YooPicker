@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# 提交前确保 dist/ 与 src/ 同步：源码改了没重新 build 时，自动重建并把产物加进本次提交。
+set -euo pipefail
+
+cd "$(git rev-parse --show-toplevel)"
+exec bash scripts/check-dist.sh --stage

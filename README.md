@@ -95,3 +95,17 @@ pnpm build       # 生成 dist（含 .d.ts）+ 由 styles.css 生成 styles.gene
 ```
 
 `src/styles.css` 是样式真源；`src/styles.generated.ts` 由 `scripts/build-styles.mjs` 生成，不要手改。
+
+### dist 与源码保持同步
+
+`dist/` 随仓库提交（git 引用方直接可用，安装时不跑构建脚本），所以改了 `src/` 必须重新 build 并一起提交。仓库自带两道保险：
+
+```bash
+# 一次性启用提交钩子（每个克隆需执行一次）
+git config core.hooksPath .githooks
+```
+
+- **pre-commit 钩子**：提交时自动 `build`，产物有变化就重建并把它加进本次提交；
+- **CI**（`.github/workflows/verify.yml`）：跑 typecheck、单测，并重新构建后校验 `dist/` 与仓库中的完全一致，不一致直接失败。
+
+手动检查：`bash scripts/check-dist.sh`。
