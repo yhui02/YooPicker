@@ -1,4 +1,4 @@
-# @qixiao/dev-picker
+# @orchard/YooPicker
 
 开发模式专用的**全站元素圈选浮框**。选中页面元素后，可把「能直接喂给 AI / 让自己回找源码」的定位信息复制出来。
 
@@ -11,11 +11,11 @@
 包尚未发布到公共 registry，推荐按目录 / git 引用：
 
 ```bash
-# 同级目录（本仓库放在 qixiao-app-framework 旁边时）
-pnpm add @qixiao/dev-picker@file:../dev-picker
+# 同级目录（本仓库放在 orchard-app-framework 旁边时）
+pnpm add @orchard/YooPicker@file:../YooPicker
 
 # 或走 git
-pnpm add git+ssh://git@host/your-group/dev-picker.git
+pnpm add git+ssh://git@host/your-group/YooPicker.git
 ```
 
 ## 用法（Next.js App Router）
@@ -26,7 +26,7 @@ pnpm add git+ssh://git@host/your-group/dev-picker.git
 import dynamic from 'next/dynamic';
 
 const DevElementPicker = dynamic(
-  () => import('@qixiao/dev-picker').then((m) => ({ default: m.DevElementPicker })),
+  () => import('@orchard/YooPicker').then((m) => ({ default: m.DevElementPicker })),
   { ssr: false },
 );
 
@@ -48,7 +48,7 @@ Vite / CRA 等同样适用：`<DevElementPicker />` 是一个普通客户端组�
 | 属性 | 类型 | 默认 | 说明 |
 |---|---|---|---|
 | `force` | `boolean` | `false` | 生产环境也渲染（调试用，慎开） |
-| `storageKey` | `string` | `'dev-picker:pos'` | 停靠位置存储键；同域名多项目可各用各的 |
+| `storageKey` | `string` | `'yoopicker:pos'` | 停靠位置存储键；同域名多项目可各用各的 |
 | `defaultSide` | `'left' \| 'right'` | `'left'` | 首次使用的停靠侧 |
 | `label` | `string` | `'开发圈选'` | 按钮文案 |
 | `onCopy` | `(text: string) => void` | — | 复制成功回调（内置提示照常） |

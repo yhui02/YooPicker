@@ -291,16 +291,16 @@ export interface DevPickerProps {
 /** 样式只注入一次：宿主无需配置 CSS 管线 */
 export function ensureDevPickerStyles(): void {
   if (typeof document === 'undefined') return;
-  if (document.getElementById('dev-picker-styles')) return;
+  if (document.getElementById('yoopicker-styles')) return;
   const el = document.createElement('style');
-  el.id = 'dev-picker-styles';
+  el.id = 'yoopicker-styles';
   el.textContent = DEV_PICKER_CSS;
   document.head.appendChild(el);
 }
 
 export function DevElementPicker({
   force = false,
-  storageKey = 'dev-picker:pos',
+  storageKey = 'yoopicker:pos',
   defaultSide = 'left',
   label = '开发圈选',
   onCopy,

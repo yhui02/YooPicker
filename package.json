@@ -1,5 +1,5 @@
 {
-  "name": "@qixiao/dev-picker",
+  "name": "@orchard/YooPicker",
   "version": "0.1.0",
   "description": "开发模式的全站元素圈选浮框：圈选页面元素、上下调整选区层级、跨页面累计并复制可直接喂给 AI 的定位信息。",
   "type": "module",
